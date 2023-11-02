@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v2	
 
       - name: Install dependencies	
-        run: |	
+        run: | 
           ls	
           mkdir edgble-kernel-5_10-rk3_4	
           cd edgble-kernel-5_10-rk3_4	
