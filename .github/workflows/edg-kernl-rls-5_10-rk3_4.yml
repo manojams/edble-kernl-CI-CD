@@ -10,11 +10,11 @@ jobs:
   build:	
     permissions: write-all
     name: kernel release 5_10-rk3_4	
-    runs-on: self-hosted	
+    runs-on: ubuntu-latest		
 
     steps:	
       - name: Checkout repository	
-        uses: actions/checkout@v2	
+        uses: actions/checkout@v1
 
       - name: Install dependencies	
         run: | 
