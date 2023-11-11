@@ -34,7 +34,8 @@ jobs:
             export ARCH=arm64 ; export CROSS_COMPILE=aarch64-linux-gnu-	
             sudo dpkg --add-architecture arm64
             make rockchip_linux_defconfig 
-            make  dtbs Image -j12	 bindeb-pkg
+            make  dtbs Image -j12	 
+            make  bindeb-pkg -j12
       
       - name: Create Release
         uses: softprops/action-gh-release@v1
