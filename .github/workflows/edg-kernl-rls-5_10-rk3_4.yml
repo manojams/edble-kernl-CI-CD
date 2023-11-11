@@ -19,24 +19,10 @@ jobs:
       - name: Install dependencies	
         run: | 
           sudo apt-get update	
-          sudo apt install -y gcc-9 
-                              openssl  
-                              build-essential 
-                              crossbuild-essential-arm64
-                              bc 
-                              bison 
-                              gcc-aarch64-linux-gnu 
-                              binutils-aarch64-linux-gnu 
-                              bison  
-                              kmod  
-                              libelf-dev 
-                              libssl-dev rsync
-                              kmod 
-                              cpio 
-                              libelf-dev 
-                              libssl-dev
+          sudo apt install -y gcc-9 openssl devscripts build-essential crossbuild-essential-arm64 bc bison  
+            gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu  libelf-dev libssl-dev kmod cpio  libssl-dev
           
-      - name: Clone and compile kernel
+      - name: Clone and compile
         run: |
             mkdir edgble-kernel-5_10-rk3_4
             cd edgble-kernel-5_10-rk3_4	
