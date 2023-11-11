@@ -24,7 +24,8 @@ jobs:
           sudo apt install -y bison flex kmod cpio libelf-dev libssl-dev rsync kmod cpio libelf-dev libssl-dev
           
       - name: Clone and compile
-        run: |	 
+        run: |
+            mkdir edgble-kernel-5_10-rk3_4
             cd edgble-kernel-5_10-rk3_4	
             git clone https://github.com/edgeble/kernel.git -b linux-5.10-gen-rkr3.4	
             cd kernel	
