@@ -21,7 +21,6 @@ jobs:
           sudo apt-get update	
           sudo apt install -y gcc-9 
                               openssl  
-                              devscripts 
                               build-essential 
                               crossbuild-essential-arm64
                               bc 
