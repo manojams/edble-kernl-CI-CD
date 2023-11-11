@@ -22,13 +22,17 @@ jobs:
           mkdir edgble-kernel-5_10-rk3_4	
           cd edgble-kernel-5_10-rk3_4	
           sudo apt-get update	
-          sudo apt install gcc g++ openssl make gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu  devscripts crossbuild-essential-arm64 bc bison flex kmod cpio libelf-dev libssl-dev
+          sudo apt install -y gcc g++ openssl make devscripts build-essential crossbuild-essential-arm64 bc bison 
+          gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu  devscripts crossbuild-essential-arm64 bc 
+          bison flex kmod cpio libelf-dev libssl-dev rsync kmod cpio libelf-dev libssl-dev
           
       - name: Clone 
         run: |	 
             cd edgble-kernel-5_10-rk3_4	
             git clone https://github.com/edgeble/kernel.git -b linux-5.10-gen-rkr3.4	
             cd kernel	
+            ./scripts/config -e WLAN -e WLAN_VENDOR_BROADCOM -m BRCMUTIL -m BRCMFMAC  -e BRCMFMAC_PROTO_BCDC -e BRCMFMAC_PROTO_MSGBUF
+             -e BRCMFMAC_USB -e WLAN_VENDOR_REALTEK -m RTW89 -m RTW89_CORE  -m RTW89_PCI -m RTW89_8825B -m RTW89_8852BE
             export ARCH=arm64 ; export CROSS_COMPILE=aarch64-linux-gnu-	
             make rockchip_linux_defconfig 
             make  dtbs Image -j12	 bindeb-pkg
