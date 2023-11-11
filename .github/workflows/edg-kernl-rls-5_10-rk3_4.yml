@@ -20,7 +20,7 @@ jobs:
         run: | 
           sudo apt-get update	
           sudo apt install -y gcc-9 openssl devscripts build-essential crossbuild-essential-arm64 bc bison  
-            gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu  libelf-dev libssl-dev kmod cpio  libssl-dev
+             binutils-aarch64-linux-gnu  libelf-dev libssl-dev kmod cpio  libssl-dev
           
       - name: Clone and compile
         run: |
